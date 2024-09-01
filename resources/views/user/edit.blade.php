@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de création de profil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+
+    label{
+        color: white;
+    }
+
+a:hover{
+    color: white;
+    text-decoration: none; 
+}
+
+</style>
+
+<body style="background-color: #2d3748;">
+
+
+    @role('Administrateur')
+
+    <div class="container mt-5">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
+        @if($message = Session::get('success'))
+            <div class="alert alert-success">
+                <li style="color:green">{{$message}}</li>
+            </div>
+        @endif
+        
+        <div class="justify-content-between d-flex align-items-center">
+        <h1 class="mb-4 text-white">Modification du profil {{$role->name}}</h1>
+        </div>
+
+
+        <form action="{{ route('user.upgrade' , ['id' => $personne->id]) }}" method="POST">
+            @csrf
+
+            <div class="mb-4">
+                <label for="role" class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Profil :</label>
+                <select id="role" name="role" class="form-control">
+                    @foreach($roles as $role)
+                        @if($role->id != 1)
+                            <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+        </div>
+
+            <div class="form-group">
+                <label for="nom">Nom :</label>
+                <input type="text" class="form-control" id="nom" name="name" value="{{$personne->name}}" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" class="form-control" id="prenom" name="first_name" value="{{$personne->first_name}}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{$personne->email}}" required>
+            </div>
+            <div class="form-group">
+                <label for="mot_de_passe">Mot de passe :</label>
+                <input type="password" class="form-control" id="mot_de_passe" name="password" value="{{$personne->password}}" required>
+            </div>
+
+            <input type="password" class="form-control" id="mot_de_passe" name="id_role_origin" value="{{$id_role_origin}}" hidden>
+
+            <button type="submit" class="btn btn-primary mt-3">Modifier le profil</button>
+        </form>
+    </div>
+
+    
+    @else
+
+    <div class="text-center text-white">
+        Je ne suis pas administrateur !
+    </div>
+
+    @endrole
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
