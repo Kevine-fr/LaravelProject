@@ -16,12 +16,10 @@
         display: flex;
         background-color: #E5E4E4;
     }
-
     a:hover{
         text-decoration: none; 
     }
         /* Start Container left code */
-
     .left{
         width: 16.5%;
         background-color: white;
@@ -96,12 +94,8 @@
         padding-left: 0.75rem;
         margin: 0;
     }
-
         /* End Container left code */
-
-
         /* Start Container center code */
-
     .center{
         padding: 5px 10px 0 10px;
         width: 58.5%;
@@ -181,8 +175,6 @@
         background-color: #0CC2E7;
     }
             /* End Container center code */
-
-
     .right{
         width: 25%;
         height: 100vh;
@@ -225,7 +217,6 @@
         width: 160px;
         height: 160px;
         margin: 10px;
-
     }
     .skill{
         justify-content: start;
@@ -257,7 +248,6 @@
                       0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
                       0px 12px 10px -10px rgba(0, 0, 0, 0.05);
         }
-
     #number {
           font-weight: 600;
           color: white;
@@ -328,7 +318,6 @@
     }
     .right-content-bottom{
         width: 100%;
-
     }
     .right-content-bottom-top{
         display: flex;
@@ -356,7 +345,6 @@
     .right-bottom-content-div{
         display: flex;
         margin: 0 5px 5px 0;
-
     }
     .right-bottom-content-div-percent{
         display: flex;
@@ -382,7 +370,6 @@
         height: 50px;
         position: relative;
         }
-
         .outertwo {
         width: 45px;
         height: 45px;
@@ -391,7 +378,6 @@
         box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
                     -6px -6px 10px -1px rgba(0, 0, 0, 0.07); /* Ombre noire */
         }
-
         .innertwo {
         width: 35px;
         height: 35px;
@@ -431,7 +417,6 @@
           box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
                       -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
         }
-
         .innerthree {
           width: 120px;
           height: 120px;
@@ -446,13 +431,10 @@
                       0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
                       0px 12px 10px -10px rgba(0, 0, 0, 0.05);
         }
-
         #number {
           font-weight: 600;
           color: #555;
         }
-
-
 </style>
 
 <body>
@@ -633,7 +615,7 @@
                     <div class="outer">
                         <div class="inner">
                             <div id="number">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -813,7 +795,7 @@
             }, 30)
         </script>
     </div>
-    
+
     @else
         <div class="text-center text-white">
             Vous n'êtes pas administrateur !
